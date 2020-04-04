@@ -1,0 +1,114 @@
+<div class="row">
+  <div class="col-sm-12 col-md-8  mx-auto">
+    <div class="card">
+      <div class="card-header text-center">
+        <h3><i class="fas fa-user-check"></i> Registro de usuario</h3>
+      </div>
+      <img
+        src="assets/style/fontawesome-5/svgs/solid/user.svg"
+        height="200px"
+        alt=""
+        class="card-img-top rounded-circle"
+      />
+      <div class="card-body">
+        <form (submit)="registrar($event)">
+          <div class="custom-file">
+            <input
+              type="file"
+              name="img_usuario"
+              [(ngModel)]="usuario.img_usuario"
+              id="img_usuario"
+              class=""
+            />
+            <!-- <label for="imagen" class="custom-file-label">elegir imagen...</label> -->
+          </div>
+
+          <div class="col-auto mt-5">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-user"></i></div>
+              </div>
+              <input
+                type="text"
+                name="nombre_usuario"
+                [(ngModel)]="usuario.nombre_usuario"
+                class="form-control"
+                placeholder="Nombre de usuario"
+              />
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fas fa-envelope"></i>
+                </div>
+              </div>
+              <input
+                type="text"
+                name="correo"
+                [(ngModel)]="usuario.correo"
+                class="form-control"
+                placeholder="Correo Electronico"
+              />
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-phone"></i></div>
+              </div>
+              <input
+                type="tel"
+                name="telefono"
+                [(ngModel)]="usuario.telefono"
+                class="form-control"
+                placeholder="Telefono"
+              />
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fas fa-passport"></i>
+                </div>
+              </div>
+              <input
+                type="password"
+                name="contrasena"
+                [(ngModel)]="usuario.contrasena"
+                class="form-control"
+                placeholder="Contraseña"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <button
+              type="submit"
+              class="btn btn-success btn-block"
+              [ngClass]="{ 'disabled': load, '': !load }"
+            >
+              <div *ngIf="!load; else loading">
+                <i class="fas fa-check"></i> Registrarme
+              </div>
+              <ng-template #loading>
+                <div class="spinner-grow spinner-grow-sm text-light"></div>
+                Cargando...
+              </ng-template>
+            </button>
+          </div>
+        </form>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="mensaje">
+            <button type="button" data-dismiss="alert" (click)="cerrarMensaje()" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="d-flex justify-content-between">
+                <h3 class="text-danger"><i class="fas fa-exclamation-circle fa-3x"></i></h3>
+                <p class="text-justify lead">{{mensaje}}</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

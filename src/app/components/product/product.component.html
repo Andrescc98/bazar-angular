@@ -1,1 +1,46 @@
-<p>product works!</p>
+<div class="row">
+    <div class="col-8 offset-2  ">
+        <div class="card mb-3">
+            <img
+            src="{{producto.img_producto?
+            'http://localhost:3000/public/img/producto/' + producto.img_producto :
+            'assets/style/fontawesome-5/svgs/solid/image.svg'
+            }}"
+            alt=""
+            height="500px"
+            class="card-img"
+        />
+        </div>
+    </div>
+    <div class="col-12 ">
+        <div class="card">
+            <div class="card-body">
+                <h1>{{producto.titulo}}</h1>
+                <h3>{{producto.precio | number}} Bs.s</h3>
+                <p>Dueño: {{usuario.nombre_usuario}}</p>
+                <button class="btn btn-info btn-block"><i class="fas fa-shopping-cart"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row my-5">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h3>Descripcion</h3>
+                <p>{{producto.descripcion}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h3>Comentarios:</h3>
+            </div>
+        </div>
+    </div>
+</div>

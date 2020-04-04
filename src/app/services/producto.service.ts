@@ -13,4 +13,7 @@ export class ProductoService {
   getAll(){
     return this.http.get(`${this.URL}/producto`);
   }
+  getOne(id:number){
+    return this.http.get(`${this.URL}/producto/${id}`);
+  }
 }

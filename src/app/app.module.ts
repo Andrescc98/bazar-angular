@@ -10,14 +10,15 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { ProductComponent } from './components/product/product.component';
 import { UsuarioFormComponent } from './components/usuario-form/usuario-form.component';
 import { UsuarioLoginComponent } from './components/usuario-login/usuario-login.component';
+import { UsuarioIndexComponent } from './components/usuario-index/usuario-index.component';
+import { ProductFormComponent } from './components/product-form/product-form.component';
 
 import { ProductoService } from "../app/services/producto.service";
 import { UsuarioService } from "./services/usuario.service";
 import { TokenInterceptorService } from "./services/token-interceptor.service";
+import { CategoriaService } from "./services/categoria.service";
 
 import { UsuarioGuard } from "./guard/usuario.guard";
-import { UsuarioIndexComponent } from './components/usuario-index/usuario-index.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { UsuarioIndexComponent } from './components/usuario-index/usuario-index.
     ProductComponent,
     UsuarioFormComponent,
     UsuarioLoginComponent,
-    UsuarioIndexComponent
+    UsuarioIndexComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +39,7 @@ import { UsuarioIndexComponent } from './components/usuario-index/usuario-index.
   providers: [
     ProductoService,
     UsuarioService,
+    CategoriaService,
     UsuarioGuard,
     {
       provide:HTTP_INTERCEPTORS,

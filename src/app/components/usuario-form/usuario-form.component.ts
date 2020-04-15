@@ -21,6 +21,7 @@ export class UsuarioFormComponent implements OnInit {
   };
   public load:boolean=false;
   public mensaje:string=null;
+  public imgPath:any=null;
 
   constructor(
     private usuarioService:UsuarioService,
@@ -47,6 +48,11 @@ export class UsuarioFormComponent implements OnInit {
         this.mensaje=err.error;
       }
     )
+  }
+
+  mostrarImagen(event:any){
+     this.imgPath=event.target.value.split('\\');
+     this.imgPath=this.imgPath[this.imgPath.length-1];
   }
 
 }

@@ -31,4 +31,7 @@ export class UsuarioService {
   getToken(){
     return localStorage.getItem('token');
   }
+  getOneUserLogin(){
+    return this.http.get(`${this.URL}/usuario/-3`);
+  }
 }

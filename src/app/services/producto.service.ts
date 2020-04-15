@@ -16,4 +16,7 @@ export class ProductoService {
   getOne(id:number){
     return this.http.get(`${this.URL}/producto/${id}`);
   }
+  getAllUser(){
+    return this.http.get(`${this.URL}/producto/lista`)
+  }
 }
